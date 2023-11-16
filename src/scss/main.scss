@@ -1,0 +1,75 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(30deg, #18222f 45%, #2d2f30);
+    height: 100vh;
+    width: 100vw;
+    color: aliceblue;
+}
+
+.description {
+    position: absolute;
+    height: auto;
+    width: 400px;
+    top: 2rem;
+    left: 2rem;
+    font-family: 'Roboto Condensed', sans-serif;
+
+    & h2 {
+        font-size: 30px;
+    }
+
+    .para {
+        font-size: 13px;
+    }
+}
+
+ul {
+    list-style-type: none;
+}
+
+.box {
+    position: absolute;
+    // border: 2px solid white;
+    border-radius: 15px;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+.work {
+    right: 2%;
+    top: 4%;
+
+}
+
+.education {
+    right: 2%;
+    top: 22%;
+}
+
+.recomondations {
+    right: 2%;
+    top: 40%;
+}
+
+.certificates {
+    right: 2%;
+    top: 58%;
+}
+
+.contact {
+    right: 2%;
+    top: 76%;
+}
+
+.skills {
+    top: 30%;
+    left: 2%;
+}

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="src/dist/css/styles.min.css">
+</head>
+
+<body>
+    <div class="pofile">
+        <canvas id="canvas1" height="900" width="680"></canvas>
+    </div>
+    <script>
+        const canvas = document.getElementById("canvas1");
+        const ctx = canvas.getContext("2d");
+        const width = canvas.width;
+        const height = canvas.height;
+
+        drawShape(ctx, width, height);
+
+        function drawShape(ctx, width, height) {
+            // Define named constants for coordinates and dimensions
+            const cornerRadius = width / 22.6;
+            const topHeight = height / 4.736;
+            const bottomHeight = height / 1.267;
+            const center = {
+                x: width / 2,
+                y: height / 2,
+            };
+
+            // Calculate coordinates using functions
+            function getTopCenter() {
+                return {
+                    x: center.x,
+                    y: 0,
+                };
+            }
+
+            function getRightCenter() {
+                return {
+                    x: width,
+                    y: center.y,
+                };
+            }
+
+            function getBottomCenter() {
+                return {
+                    x: center.x,
+                    y: height,
+                };
+            }
+
+            function getLeftCenter() {
+                return {
+                    x: 0,
+                    y: center.y,
+                };
+            }
+
+            ctx.strokeStyle = "white";
+
+            // Draw the shape
+            ctx.beginPath();
+            ctx.moveTo(cornerRadius, topHeight);
+            ctx.quadraticCurveTo(
+                -cornerRadius / 2,
+                (topHeight + height / 3.6) / 2,
+                cornerRadius,
+                height / 3.6
+            );
+            ctx.lineTo(width / 2.193, height / 90);
+            ctx.quadraticCurveTo(
+                getTopCenter().x,
+                getTopCenter().y,
+                width / 1.83,
+                height / 90
+            );
+
+            ctx.lineTo(width / 1.04, bottomHeight);
+            ctx.quadraticCurveTo(
+                width / 0.971,
+                (topHeight + bottomHeight) / 2,
+                width / 1.046,
+                topHeight
+            );
+            ctx.lineTo(width - cornerRadius, topHeight);
+            ctx.quadraticCurveTo(
+                width + cornerRadius / 2,
+                (topHeight + height / 3.6) / 2,
+                width - cornerRadius,
+                height / 3.6
+            );
+
+            ctx.lineTo(width / 1.183, height - height / 1.37);
+            ctx.quadraticCurveTo(
+                getBottomCenter().x,
+                getBottomCenter().y,
+                width / 1.837,
+                height - height / 1.37
+            );
+
+            ctx.lineTo(width / 1.046, bottomHeight);
+            ctx.quadraticCurveTo(
+                width / 0.971,
+                (bottomHeight + height / 1.374) / 2,
+                width / 1.039,
+                height / 1.374
+            );
+            ctx.lineTo(cornerRadius, bottomHeight);
+            ctx.quadraticCurveTo(center.x, height, width - cornerRadius, bottomHeight);
+            ctx.closePath();
+            ctx.stroke();
+        }
+    </script>
+</body>
+
+</html>
