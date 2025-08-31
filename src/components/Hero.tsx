@@ -1,8 +1,82 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Github, Linkedin, Twitter, ChevronDown } from 'lucide-react';
 import HackerOneIcon from './icons/HackerOneIcon';
 import BugcrowdIcon from './icons/BugcrowdIcon';
+
+// Laser Typing Animation Component
+const LaserTyping: React.FC<{ text: string; delay?: number }> = ({ text, delay = 0 }) => {
+  const [displayedText, setDisplayedText] = useState('');
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [showCursor, setShowCursor] = useState(true);
+  const [isTyping, setIsTyping] = useState(false);
+
+  useEffect(() => {
+    const startTimer = setTimeout(() => {
+      setIsTyping(true);
+    }, delay);
+
+    return () => clearTimeout(startTimer);
+  }, [delay]);
+
+  useEffect(() => {
+    if (!isTyping) return;
+
+    if (currentIndex <= text.length) {
+      const timer = setTimeout(() => {
+        setDisplayedText(text.slice(0, currentIndex));
+        setCurrentIndex(currentIndex + 1);
+      }, currentIndex * 30); // Much faster - 30ms per character
+
+      return () => clearTimeout(timer);
+    } else {
+      // Typing is complete, start cursor blinking after a delay
+      setTimeout(() => {
+        const blinkInterval = setInterval(() => {
+          setShowCursor(prev => !prev);
+        }, 600);
+        
+        return () => clearInterval(blinkInterval);
+      }, 500);
+    }
+  }, [isTyping, currentIndex, text]);
+
+  return (
+    <span className="relative">
+      <span className="gradient-text">
+        {displayedText.split('').map((char, index) => (
+          <motion.span
+            key={index}
+            className="inline-block"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ 
+              duration: 0.1,
+              ease: "easeOut"
+            }}
+            style={{ 
+              textShadow: index === displayedText.length - 1 ? 
+                '0 0 10px var(--cyber-green), 0 0 20px var(--cyber-green)' : 
+                'none'
+            }}
+          >
+            {char === ' ' ? '\u00A0' : char}
+          </motion.span>
+        ))}
+      </span>
+      <motion.span
+        className="laser-cursor"
+        animate={{ 
+          opacity: showCursor ? 1 : 0,
+          scale: showCursor ? 1 : 0.8 
+        }}
+        transition={{ duration: 0.1 }}
+      >
+        _
+      </motion.span>
+    </span>
+  );
+};
 
 const Hero: React.FC = () => {
   const socialLinks = [
@@ -36,7 +110,7 @@ const Hero: React.FC = () => {
               transition={{ delay: 0.2, duration: 0.8 }}
             >
               <span className="text-primary-900">Hi, I'm </span>
-              <span className="gradient-text">Tharindu Shakya</span>
+              <LaserTyping text="Tharindu Shakya" delay={800} />
             </motion.h1>
 
             <motion.p
