@@ -2,8 +2,6 @@
 
 ![Profile views](https://komarev.com/ghpvc/?username=tharindushakya&label=Profile%20views&color=0e75b6&style=flat&theme=onedark)
 
-![avatar](./__images__/notion-avatar-1704953187150.svg)
-
 [![roadmap.sh](https://api.roadmap.sh/v1-badge/wide/65621cef5145316d256f1447?variant=dark&roadmaps=cpp%2Cpython%2Ccyber-security)](https://roadmap.sh)
 
 ![tharindu_shakya GitHub Stats](https://github-readme-stats.vercel.app/api?username=tharindushakya&hide=,prs,issues&theme=vue-dark&show_icons=true&locale=en)
