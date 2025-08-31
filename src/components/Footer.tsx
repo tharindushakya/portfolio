@@ -67,7 +67,7 @@ const Footer: React.FC = () => {
             >
               <div className="flex items-center space-x-2 mb-4">
                 <Shield className="h-8 w-8 text-cyber-green" />
-                <span className="text-2xl font-bold gradient-text">SecPortfolio</span>
+                <span className="text-2xl font-bold gradient-text">TharinduShakya</span>
               </div>
               <p className="text-primary-600 mb-6 max-w-md leading-relaxed">
                 Dedicated to strengthening cybersecurity defenses through ethical hacking, 
@@ -137,31 +137,32 @@ const Footer: React.FC = () => {
         {/* Bottom Section */}
         <div className="border-t border-primary-300/20 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            {/* Copyright */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              className="text-sm text-primary-500"
-            >
-              <p className="flex items-center space-x-1">
-                <span>© {currentYear} Tharindu Shakya. Made with</span>
-                <Heart size={14} className="text-red-400 fill-current" />
-                <span>and lots of coffee.</span>
-              </p>
-            </motion.div>
+            {/* Left side - Copyright and Additional Info */}
+            <div className="flex flex-col space-y-2">
+              {/* Copyright */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                className="text-sm text-primary-500"
+              >
+                <p className="flex items-center flex-wrap gap-1">
+                  <span>© {currentYear} Tharindu Shakya. Made with&nbsp;</span>
+                  <Heart size={14} className="text-red-400 fill-current " />
+                  <span>&nbsp;and lots of coffee.</span>
+                </p>
+              </motion.div>
 
-            {/* Additional Info */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              className="flex items-center space-x-6 text-sm text-primary-500"
-            >
-              <span>All vulnerabilities responsibly disclosed</span>
-              <div className="w-1 h-1 bg-primary-400 rounded-full"></div>
-              <span>Security researcher & ethical hacker</span>
-            </motion.div>
+              {/* Additional Info */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                className="flex items-center space-x-6 text-sm text-primary-500"
+              >
+                <span>All vulnerabilities responsibly disclosed</span>
+              </motion.div>
+            </div>
 
             {/* Scroll to Top Button */}
             <motion.button

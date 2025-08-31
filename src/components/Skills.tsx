@@ -158,9 +158,9 @@ const Skills: React.FC = () => {
                   <span className="text-sm font-medium text-primary-700">Proficiency</span>
                   <span className="text-sm font-bold text-cyber-green">{skill.level}%</span>
                 </div>
-                <div className="w-full bg-primary-200/20 rounded-full h-2">
+                <div className="w-full bg-primary-200/20 rounded-lg h-2">
                   <motion.div
-                    className="bg-gradient-to-r from-cyber-green to-cyber-blue h-2 rounded-full"
+                    className="bg-gradient-to-r from-cyber-green to-cyber-blue h-2 rounded-lg"
                     initial={{ width: 0 }}
                     whileInView={{ width: `${skill.level}%` }}
                     viewport={{ once: true }}

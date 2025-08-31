@@ -196,7 +196,7 @@ const Projects: React.FC = () => {
                   <span
                     key={tag}
                     onClick={() => handleTagClick(tag)}
-                    className={`inline-flex items-center pl-3 pr-4 py-1 text-xs font-medium rounded-full border cursor-pointer transition-all duration-300 whitespace-nowrap ${
+                    className={`inline-flex items-center pl-3 pr-4 py-1 text-xs font-medium rounded-xl border cursor-pointer transition-all duration-300 whitespace-nowrap ${
                       selectedTag === tag 
                         ? 'bg-cyber-green/20 text-cyber-green border-cyber-green/40' 
                         : 'bg-cyber-green/10 text-cyber-green border-cyber-green/20 hover:bg-cyber-green/15'
