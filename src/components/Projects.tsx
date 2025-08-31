@@ -29,10 +29,10 @@ const Projects: React.FC = () => {
       title: "Network Security Assessment Framework",
       description: "Developed a comprehensive network security assessment tool that automates vulnerability scanning and generates detailed reports. The tool identifies misconfigurations, open ports, and potential attack vectors.",
       tags: ["Network Security", "Automation", "Python"],
-      impact: "Reduced assessment time by 70%, used by 5+ organizations",
-      date: "2024",
-      githubUrl: "#",
-      liveUrl: "#"
+      impact: "Reduced assessment time by 70%",
+      date: "2025",
+      githubUrl: "https://github.com/tharindushakya/network-security-assessment-framework.git",
+      liveUrl: "https://tharindushakya.github.io/network-security-assessment-framework/"
     },
     {
       title: "SQL Injection Detection in E-commerce",
@@ -47,8 +47,8 @@ const Projects: React.FC = () => {
       description: "Built a complete isolated malware analysis environment using VirtualBox and REMnux. Analyzed 50+ malware samples and documented IOCs and TTPs for threat intelligence.",
       tags: ["Malware Analysis", "Threat Intelligence", "Lab Setup"],
       impact: "Enhanced threat detection capabilities, 50+ IOCs documented",
-      date: "2023",
-      githubUrl: "#"
+      date: "2025",
+      githubUrl: "https://github.com/tharindushakya/malware-analysis-lab.git"
     },
     {
       title: "CSRF Vulnerability Research",
@@ -161,12 +161,12 @@ const Projects: React.FC = () => {
                       href={project.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      whileHover={{ scale: 1.1 }}
+                      whileHover={{ scale: 1.12 }}
                       whileTap={{ scale: 0.95 }}
-                      className="p-2 bg-primary-200/10 rounded-lg hover:bg-cyber-green/20 transition-colors"
+                      className="inline-flex items-center justify-center w-10 h-10 leading-none rounded-full transition-all duration-300 hover:shadow-[0_0_10px_rgba(0,255,65,0.45)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyber-green/60"
                       title="View Code"
                     >
-                      <Github size={18} className="text-primary-600 hover:text-cyber-green" />
+                      <Github className="w-5 h-5 text-primary-600 hover:text-cyber-green transition-colors" />
                     </motion.a>
                   )}
                   {project.liveUrl && (
@@ -174,12 +174,12 @@ const Projects: React.FC = () => {
                       href={project.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      whileHover={{ scale: 1.1 }}
+                      whileHover={{ scale: 1.12 }}
                       whileTap={{ scale: 0.95 }}
-                      className="p-2 bg-primary-200/10 rounded-lg hover:bg-cyber-blue/20 transition-colors"
+                      className="inline-flex items-center justify-center w-10 h-10 leading-none rounded-full transition-all duration-300 hover:shadow-[0_0_10px_rgba(0,212,255,0.45)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyber-blue/60"
                       title="View Project"
                     >
-                      <ExternalLink size={18} className="text-primary-600 hover:text-cyber-blue" />
+                      <ExternalLink className="w-5 h-5 text-primary-600 hover:text-cyber-blue transition-colors" />
                     </motion.a>
                   )}
                 </div>
@@ -196,14 +196,14 @@ const Projects: React.FC = () => {
                   <span
                     key={tag}
                     onClick={() => handleTagClick(tag)}
-                    className={`inline-flex items-center pl-3 pr-4 py-1 text-xs font-medium rounded-xl border cursor-pointer transition-all duration-300 whitespace-nowrap ${
-                      selectedTag === tag 
-                        ? 'bg-cyber-green/20 text-cyber-green border-cyber-green/40' 
-                        : 'bg-cyber-green/10 text-cyber-green border-cyber-green/20 hover:bg-cyber-green/15'
+                    className={`inline-flex items-center gap-2.5 pl-5 pr-6 py-1.5 text-sm font-medium rounded-xl border cursor-pointer transition-all duration-300 whitespace-nowrap ${
+                      selectedTag === tag
+                        ? 'bg-cyber-green/25 text-cyber-green border-cyber-green/50 shadow-[0_0_0_1px_rgba(0,255,65,0.25)]'
+                        : 'bg-cyber-green/10 text-cyber-green border-cyber-green/25 hover:bg-cyber-green/15'
                     }`}
                   >
-                    <Tag size={12} className="mr-2 ml-2" />
-                    {tag}
+                    <Tag size={14} className="shrink-0 ml-2" />
+                    <span className="tracking-wide mr-2 ml-2">{tag}</span>
                   </span>
                 ))}
               </div>

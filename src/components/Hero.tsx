@@ -134,7 +134,7 @@ const Hero: React.FC = () => {
 
             {/* Social Links */}
             <motion.div
-              className="flex justify-center space-x-6 mb-12"
+              className="flex items-center justify-center space-x-6 mb-12"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8, duration: 0.8 }}
@@ -147,10 +147,10 @@ const Hero: React.FC = () => {
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.95 }}
-                  className="p-4 bg-primary-100/10 backdrop-blur-sm rounded-full border border-primary-300/20 hover:border-cyber-green/50 transition-all duration-300 cyber-glow"
+                  className="inline-flex items-center justify-center w-14 h-14 rounded-full leading-none transition-all duration-300 hover:shadow-[0_0_12px_rgba(0,255,65,0.5)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyber-green/60"
                   title={social.label}
                 >
-                  <social.icon size={20} className="text-primary-600  hover:text-cyber-green transition-colors" />
+                  <social.icon className="w-5 h-5 text-primary-600 hover:text-cyber-green transition-colors" />
                 </motion.a>
               ))}
             </motion.div>
