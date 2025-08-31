@@ -1,138 +1,77 @@
-# Cybersecurity Portfolio Website
+# Tharindu Shakya
 
-A modern, responsive portfolio website built with React and TypeScript, specifically designed for cybersecurity professionals, bug hunters, and security analysts.
+![Profile views](https://komarev.com/ghpvc/?username=tharindushakya&label=Profile%20views&color=0e75b6&style=flat&theme=onedark)
 
-## ✨ Features
+![avatar](./__images__/notion-avatar-1704953187150.svg)
 
-- **Modern Design**: Clean, professional design with cybersecurity-themed aesthetics
-- **Responsive**: Mobile-first design that works on all devices
-- **Security Focused**: Dark theme with cyber-inspired color scheme (green/blue accents)
-- **Smooth Animations**: Powered by Framer Motion for engaging user experience
-- **Contact Form**: Integrated contact form with validation
-- **Customizable**: Easy to personalize with your own information
+[![roadmap.sh](https://api.roadmap.sh/v1-badge/wide/65621cef5145316d256f1447?variant=dark&roadmaps=cpp%2Cpython%2Ccyber-security)](https://roadmap.sh)
 
-## 📋 Sections
+![tharindu_shakya GitHub Stats](https://github-readme-stats.vercel.app/api?username=tharindushakya&hide=,prs,issues&theme=vue-dark&show_icons=true&locale=en)
 
-1. **Header**: Fixed navigation with smooth scrolling
-2. **Hero**: Name, title, tagline, and social links
-3. **Skills**: Visual showcase of cybersecurity expertise with progress bars
-4. **Projects**: Showcase of security projects and case studies
-5. **Certifications**: Display of security certifications and credentials
-6. **Contact**: Contact form and information
-7. **Footer**: Additional links and information
+## Trainee Information Security Analyst
 
-## 🚀 Quick Start
+🔒 Cybersecurity Undergraduate passionate about securing digital landscapes and defending against cyber threats. Adept at identifying vulnerabilities, implementing robust security solutions, and contributing to open-source cybersecurity projects.
 
-```bash
-# Install dependencies
-npm install
+### 🔑 Key Skills
 
-# Start development server
-npm run dev
+#### Security
 
-# Build for production
-npm run build
-```
+- Ethical Hacking
+- Firewalls (pfSense | Windows Firewall)
+- Incident Response and Remediation
+- Intrusion Detection Systems (Snort)
+- Security Assessment Tools (Burp Suite | Kali Linux | Metasploit | Nmap | Nessus)
+- Network Security
+- Web Application Security
 
-## 🛠️ Customization Guide
+#### Operating Systems
 
-### 1. Personal Information
+- Server Operating Systems (Linux | Windows)
+- Desktop Operating Systems (Linux | Mac OS | Windows)
 
-**Hero Section** (`src/components/Hero.tsx`):
-- Update your name in the h1 tag
-- Change the title/subtitle
-- Update social media links in the `socialLinks` array
+#### Infrastructure
 
-**Contact Section** (`src/components/Contact.tsx`):
-- Update contact information in the `contactInfo` array
-- Update social links in the `socialLinks` array
+- Cloud Providers (Azure)
+- DevOps Tools (Ansible)
+- Enterprise Services (Database | DNS | SMTP | Web)
+- Hypervisors (ESXi | VirtualBox)
+- Identity Providers (Active Directory | Azure Active Directory)
 
-### 2. Skills
+#### Networking
 
-**Skills Section** (`src/components/Skills.tsx`):
-- Modify the `skills` array to reflect your expertise
-- Adjust proficiency levels (0-100)
-- Add/remove skills as needed
+- IP Masking (Proxies | Tor | VPN)
+- Protocol Analysis (WireShark)
 
-### 3. Projects
+#### Programming
 
-**Projects Section** (`src/components/Projects.tsx`):
-- Update the `projects` array with your actual projects
-- Add GitHub links, live demo links, or writeup links
-- Customize project descriptions and impact statements
+- Scripting Languages (Bash | PowerShell | Python)
+- Developing Languages (C | C++)
 
-### 4. Certifications
+### 🛠️ Personal Projects
 
-**Certifications Section** (`src/components/Certifications.tsx`):
-- Modify the `certifications` array with your actual certifications
-- Update status: 'earned', 'in-progress', or 'planned'
-- Add credential IDs and verification links
+[//]: # (#### Project Name 1)
 
-## 🎨 Styling
+[//]: # (Brief description of the project, your role, and the technologies/tools used.)
 
-**Colors** (`src/index.css`):
-```css
-:root {
-  --cyber-green: #00ff41;    /* Main accent color */
-  --cyber-blue: #00d4ff;     /* Secondary accent color */
-  --primary-50: #0f172a;     /* Background color */
-}
-```
+[//]: # (Repository: [Project 1]https://github.com/tharindushakya/project1)
 
-## 🏗️ Project Structure
+### 📚 Certifications
 
-```
-src/
-├── components/
-│   ├── Header.tsx          # Navigation header
-│   ├── Hero.tsx           # Hero/landing section
-│   ├── Skills.tsx         # Skills showcase
-│   ├── Projects.tsx       # Projects portfolio
-│   ├── Certifications.tsx # Certifications display
-│   ├── Contact.tsx        # Contact form
-│   ├── Footer.tsx         # Footer
-│   └── index.ts          # Component exports
-├── App.tsx               # Main app component
-├── main.tsx             # App entry point
-└── index.css           # Global styles
-```
+[//]: # (-)
 
-## 💻 Technologies Used
+### 📢 Talks and Presentations
 
-- **React 18** - UI framework
-- **TypeScript** - Type safety
-- **Vite** - Build tool and dev server
-- **Framer Motion** - Animations
-- **Lucide React** - Icons
-- **React Hook Form** - Form handling
+[//]: # ( "Best Practices in Web Application Security" - Cybersecurity Conference 2022)
+[//]: # (  - Slides: Linkhttps://slideshare.net/TharinduShakya1/)
 
-## 🚀 Deployment
+### 🌐 Connect with Me
 
-### Netlify
-1. Build: `npm run build`
-2. Deploy the `dist` folder
+- LinkedIn: [TharinduShakya](https://www.linkedin.com/in/tharindu-shakya-93775318b)
+- Twitter: [@Wtshakya](https://twitter.com/@wtshakya)
+- Blog: [Tharindu Shakya](tharinduwarnapura.com)
 
-### Vercel
-1. Connect your GitHub repository
-2. Vercel will auto-detect Vite configuration
+### 🤝 Open to Collaborations
 
-### GitHub Pages
-```bash
-npm install -D gh-pages
-npm run deploy
-```
+I'm always interested in collaborating on exciting cybersecurity projects. Feel free to reach out to me via email at [tharindu.github@gmail.com](mailto:tharindu.github@gmail.com).
 
-## 🔒 Security Features
-
-- No sensitive information in client-side code
-- Proper form validation
-- Secure external links
-- Content Security Policy ready
-
-## 📄 License
-
-MIT License - feel free to use this template!
-
----
-
-**Built with ❤️ for the cybersecurity community**
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs?username=tharindushakya&theme=vue-dark&show_icons=true&locale=en&layout=compact)
