@@ -186,7 +186,7 @@ const Skills: React.FC = () => {
               Active engagement in cybersecurity learning platforms and hands-on challenges
             </p>
           </div>
-          <div className="flex justify-center">
+          <div className="flex justify-center gap-8 items-center">
             <div className="bg-primary-100/5 backdrop-blur-sm rounded-xl p-4 border border-primary-300/20 hover:border-cyber-green/50 transition-all duration-300">
               <div className="flex items-center gap-8">
                 <div className="flex items-center justify-center">
@@ -206,6 +206,16 @@ const Skills: React.FC = () => {
                 </div>
               </div>
             </div>
+            <motion.a
+              href="https://tryhackme.com/invite/Shakya"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-cyber-green to-cyber-blue text-primary-50 text-sm font-semibold rounded-lg hover:shadow-lg transition-all duration-300"
+            >
+              Connect on TryHackMe
+            </motion.a>
           </div>
         </motion.div>
         {/* Additional Info */}
