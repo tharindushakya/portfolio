@@ -206,38 +206,8 @@ const Certifications: React.FC = () => {
               )}
             </motion.div>
           ))}
-        </motion.div>
 
-        {/* Platform Achievements */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.3 }}
-          className="mt-16"
-        >
-          <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold mb-4 gradient-text">Platform Achievements</h3>
-            <p className="text-primary-600 max-w-2xl mx-auto">
-              Active engagement in cybersecurity learning platforms and hands-on challenges
-            </p>
-          </div>
-          <div className="flex justify-center">
-            <div className="bg-primary-100/5 backdrop-blur-sm rounded-xl p-3 border border-primary-300/20 hover:border-cyber-green/50 transition-all duration-300">
-              <div className="text-center mb-4">
-                <h4 className="text-lg font-semibold text-primary-800 mb-2">TryHackMe Progress</h4>
-                <p className="text-sm text-primary-600">Hands-on cybersecurity learning platform</p>
-              </div>              
-              <motion.iframe
-                  src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=303130"
-                  style={{ border: 'none', overflow: 'hidden'}}
-                  title="TryHackMe Badge"
-                  width="100%"
-              />
-            </div>
-          </div>
         </motion.div>
-
         {/* Additional Info */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}

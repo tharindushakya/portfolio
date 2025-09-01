@@ -1,13 +1,13 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { 
-  Shield, 
-  Bug, 
-  Network, 
-  Lock, 
-  Search, 
-  Terminal, 
-  Eye, 
+import {
+  Shield,
+  Bug,
+  Network,
+  Lock,
+  Search,
+  Terminal,
+  Eye,
   AlertTriangle,
   Server,
   Key
@@ -119,7 +119,7 @@ const Skills: React.FC = () => {
             <span className="gradient-text">Security Expertise</span>
           </h2>
           <p className="text-lg text-primary-600 max-w-2xl mx-auto">
-            Specialized skills in cybersecurity, developed through hands-on experience 
+            Specialized skills in cybersecurity, developed through hands-on experience
             and continuous learning in the ever-evolving threat landscape.
           </p>
         </motion.div>
@@ -172,6 +172,42 @@ const Skills: React.FC = () => {
           ))}
         </motion.div>
 
+        {/* Platform Achievements */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.3 }}
+          className="mt-16"
+        >
+          <div className="text-center mb-8">
+            <h3 className="text-2xl font-bold mb-4 gradient-text">Platform Achievements</h3>
+            <p className="text-primary-600 max-w-2xl mx-auto">
+              Active engagement in cybersecurity learning platforms and hands-on challenges
+            </p>
+          </div>
+          <div className="flex justify-center">
+            <div className="bg-primary-100/5 backdrop-blur-sm rounded-xl p-4 border border-primary-300/20 hover:border-cyber-green/50 transition-all duration-300">
+              <div className="flex items-center gap-8">
+                <div className="flex items-center justify-center">
+                  <h4 className="text-lg font-semibold text-primary-800 whitespace-nowrap">TryHackMe Progress</h4>
+                </div>
+                <div className="flex items-center justify-center">
+                  <motion.iframe
+                    whileHover={{ scale: 1.02 }}
+                    src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=303130"
+                    width="330"
+                    height="90"
+                    style={{ border: 'none', overflow: 'hidden', display: 'block' }}
+                    className="rounded-lg"
+                    title="TryHackMe Badge"
+                    scrolling="no"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
         {/* Additional Info */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -183,8 +219,8 @@ const Skills: React.FC = () => {
           <div className="bg-primary-100/5 backdrop-blur-sm rounded-xl p-8 border border-primary-300/20">
             <h3 className="text-2xl font-bold mb-4 gradient-text">Continuous Learning</h3>
             <p className="text-primary-600 max-w-3xl mx-auto leading-relaxed">
-              The cybersecurity landscape evolves rapidly. I stay current with the latest threats, 
-              techniques, and technologies through continuous education, hands-on practice, 
+              The cybersecurity landscape evolves rapidly. I stay current with the latest threats,
+              techniques, and technologies through continuous education, hands-on practice,
               and active participation in the security community.
             </p>
           </div>
