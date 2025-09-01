@@ -113,19 +113,19 @@ const Projects: React.FC = () => {
   };
 
   return (
-    <section id="projects" className="py-20 relative">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+  <section id="projects" className="py-20 relative layered z-background defer-section">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 z-content">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-16 z-content"
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-            <span className="gradient-text">Security Projects</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 z-text">
+            <span className="gradient-text z-text">Security Projects</span>
           </h2>
-          <p className="text-lg text-primary-600 max-w-2xl mx-auto">
+          <p className="text-lg text-primary-600 max-w-2xl mx-auto z-text">
             Real-world cybersecurity projects showcasing practical skills, 
             measurable impact, and commitment to improving digital security.
           </p>
@@ -137,36 +137,35 @@ const Projects: React.FC = () => {
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="grid grid-cols-1 lg:grid-cols-2 gap-8"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-8 z-content"
         >
           {sortedProjects.map((project) => (
             <motion.div
               key={project.title}
               variants={itemVariants}
               whileHover={{ y: -5 }}
-              className="bg-primary-100/5 backdrop-blur-sm rounded-xl p-6 border border-primary-300/20 hover:border-cyber-green/50 transition-all duration-300 card-hover"
+              className="bg-primary-100/5 backdrop-blur-sm rounded-xl p-6 border border-primary-300/20 hover:border-cyber-green/50 transition-all duration-300 card-hover z-content"
             >
               {/* Project Header */}
-              <div className="flex items-start justify-between mb-4">
-                <div className="flex-1">
-                  <h3 className="text-xl font-bold text-primary-800 mb-2">{project.title}</h3>
-                  <div className="flex items-center text-sm text-primary-500 mb-3">
-                    <Calendar size={16} className="mr-2" />
+              <div className="flex items-start justify-between mb-4 z-content">
+                <div className="flex-1 z-content">
+                  <h3 className="text-xl font-bold text-primary-800 mb-2 z-text">{project.title}</h3>
+                  <div className="flex items-center text-sm text-primary-500 mb-3 z-text">
+                    <Calendar size={16} className="mr-2 z-text" />
                     {project.date}
                   </div>
                 </div>
-                <div className="flex space-x-2 ml-4">
-                  {project.githubUrl && (
+                <div className="flex space-x-2 ml-4 z-content">{project.githubUrl && (
                     <motion.a
                       href={project.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
                       whileHover={{ scale: 1.12 }}
                       whileTap={{ scale: 0.95 }}
-                      className="inline-flex items-center justify-center w-10 h-10 leading-none rounded-full transition-all duration-300 hover:shadow-[0_0_10px_rgba(0,255,65,0.45)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyber-green/60"
+                      className="inline-flex items-center justify-center w-10 h-10 leading-none rounded-full transition-all duration-300 hover:shadow-[0_0_10px_rgba(0,255,65,0.45)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyber-green/60 z-content"
                       title="View Code"
                     >
-                      <Github className="w-5 h-5 text-primary-600 hover:text-cyber-green transition-colors" />
+                      <Github className="w-5 h-5 text-primary-600 hover:text-cyber-green transition-colors z-text" />
                     </motion.a>
                   )}
                   {project.liveUrl && (
@@ -176,45 +175,45 @@ const Projects: React.FC = () => {
                       rel="noopener noreferrer"
                       whileHover={{ scale: 1.12 }}
                       whileTap={{ scale: 0.95 }}
-                      className="inline-flex items-center justify-center w-10 h-10 leading-none rounded-full transition-all duration-300 hover:shadow-[0_0_10px_rgba(0,212,255,0.45)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyber-blue/60"
+                      className="inline-flex items-center justify-center w-10 h-10 leading-none rounded-full transition-all duration-300 hover:shadow-[0_0_10px_rgba(0,212,255,0.45)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyber-blue/60 z-content"
                       title="View Project"
                     >
-                      <ExternalLink className="w-5 h-5 text-primary-600 hover:text-cyber-blue transition-colors" />
+                      <ExternalLink className="w-5 h-5 text-primary-600 hover:text-cyber-blue transition-colors z-text" />
                     </motion.a>
                   )}
                 </div>
               </div>
 
               {/* Project Description */}
-              <p className="text-primary-600 mb-4 leading-relaxed text-sm">
+              <p className="text-primary-600 mb-4 leading-relaxed text-sm z-text">
                 {project.description}
               </p>
 
               {/* Tags */}
-              <div className="flex flex-wrap gap-4 mb-4">
+              <div className="flex flex-wrap gap-4 mb-4 z-content">
                 {project.tags.map((tag) => (
                   <span
                     key={tag}
                     onClick={() => handleTagClick(tag)}
-                    className={`inline-flex items-center gap-2.5 pl-5 pr-6 py-1.5 text-sm font-medium rounded-xl border cursor-pointer transition-all duration-300 whitespace-nowrap ${
+                    className={`inline-flex items-center gap-2.5 pl-5 pr-6 py-1.5 text-sm font-medium rounded-xl border cursor-pointer transition-all duration-300 whitespace-nowrap z-content ${
                       selectedTag === tag
                         ? 'bg-cyber-green/25 text-cyber-green border-cyber-green/50 shadow-[0_0_0_1px_rgba(0,255,65,0.25)]'
                         : 'bg-cyber-green/10 text-cyber-green border-cyber-green/25 hover:bg-cyber-green/15'
                     }`}
                   >
-                    <Tag size={14} className="shrink-0 ml-2" />
-                    <span className="tracking-wide mr-2 ml-2">{tag}</span>
+                    <Tag size={14} className="shrink-0 ml-2 z-text" />
+                    <span className="tracking-wide mr-2 ml-2 z-text">{tag}</span>
                   </span>
                 ))}
               </div>
 
               {/* Impact */}
-              <div className="bg-primary-200/10 rounded-lg p-3 border border-cyber-green/20">
-                <div className="flex items-center mb-1">
-                  <Award size={16} className="text-cyber-green mr-2" />
-                  <span className="text-sm font-semibold text-primary-700">Impact</span>
+              <div className="bg-primary-200/10 rounded-lg p-3 border border-cyber-green/20 z-content">
+                <div className="flex items-center mb-1 z-content">
+                  <Award size={16} className="text-cyber-green mr-2 z-text" />
+                  <span className="text-sm font-semibold text-primary-700 z-text">Impact</span>
                 </div>
-                <p className="text-sm text-primary-600">{project.impact}</p>
+                <p className="text-sm text-primary-600 z-text">{project.impact}</p>
               </div>
             </motion.div>
           ))}
@@ -226,11 +225,11 @@ const Projects: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.5 }}
-          className="text-center mt-16"
+          className="text-center mt-16 z-content"
         >
-          <div className="bg-primary-100/5 backdrop-blur-sm rounded-xl p-8 border border-primary-300/20">
-            <h3 className="text-2xl font-bold mb-4 gradient-text">Ready for Your Next Project?</h3>
-            <p className="text-primary-600 mb-6 max-w-2xl mx-auto">
+          <div className="bg-primary-100/5 backdrop-blur-sm rounded-xl p-8 border border-primary-300/20 z-content">
+            <h3 className="text-2xl font-bold mb-4 gradient-text z-text">Ready for Your Next Project?</h3>
+            <p className="text-primary-600 mb-6 max-w-2xl mx-auto z-text">
               I'm always looking for challenging cybersecurity projects where I can apply my skills 
               and make a meaningful impact on your organization's security posture.
             </p>
@@ -238,7 +237,7 @@ const Projects: React.FC = () => {
               href="#contact"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="inline-block px-8 py-3 bg-gradient-to-r from-cyber-green to-cyber-blue text-primary-50 font-semibold rounded-lg hover:shadow-lg transition-all duration-300"
+              className="inline-block px-8 py-3 bg-gradient-to-r from-cyber-green to-cyber-blue text-primary-50 font-semibold rounded-lg hover:shadow-lg transition-all duration-300 z-content"
             >
               Let's Collaborate
             </motion.a>

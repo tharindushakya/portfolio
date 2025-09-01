@@ -106,14 +106,14 @@ const Skills: React.FC = () => {
   };
 
   return (
-    <section id="skills" className="py-20 relative">
+  <section id="skills" className="py-20 relative layered z-content defer-section">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-16 layered z-text"
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
             <span className="gradient-text">Security Expertise</span>
@@ -130,37 +130,37 @@ const Skills: React.FC = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 layered z-content"
         >
           {skills.map((skill, index) => (
             <motion.div
               key={skill.name}
               variants={itemVariants}
               whileHover={{ y: -5 }}
-              className="bg-primary-100/5 backdrop-blur-sm rounded-xl p-6 border border-primary-300/20 hover:border-cyber-green/50 transition-all duration-300 card-hover"
+              className="bg-primary-100/5 backdrop-blur-sm rounded-xl p-6 border border-primary-300/20 hover:border-cyber-green/50 transition-all duration-300 card-hover layered z-content"
             >
               {/* Skill Icon */}
               <div className="flex items-center mb-4">
-                <div className="p-3 bg-gradient-to-br from-cyber-green/20 to-cyber-blue/20 rounded-lg mr-4">
-                  <skill.icon size={24} className="text-cyber-green" />
+                <div className="p-3 bg-gradient-to-br from-cyber-green/20 to-cyber-blue/20 rounded-lg mr-4 layered z-background-patterns">
+                  <skill.icon size={24} className="text-cyber-green layered z-text" />
                 </div>
-                <h3 className="text-xl font-semibold text-primary-800">{skill.name}</h3>
+                <h3 className="text-xl font-semibold text-primary-800 layered z-text">{skill.name}</h3>
               </div>
 
               {/* Skill Description */}
-              <p className="text-primary-600 mb-4 text-sm leading-relaxed">
+              <p className="text-primary-600 mb-4 text-sm leading-relaxed layered z-text">
                 {skill.description}
               </p>
 
               {/* Skill Level */}
-              <div className="mb-2">
+              <div className="mb-2 layered z-content">
                 <div className="flex justify-between items-center mb-2">
-                  <span className="text-sm font-medium text-primary-700">Proficiency</span>
-                  <span className="text-sm font-bold text-cyber-green">{skill.level}%</span>
+                  <span className="text-sm font-medium text-primary-700 layered z-text">Proficiency</span>
+                  <span className="text-sm font-bold text-cyber-green layered z-text">{skill.level}%</span>
                 </div>
-                <div className="w-full bg-primary-200/20 rounded-lg h-2">
+                <div className="w-full bg-primary-200/20 rounded-lg h-2 layered z-background-patterns">
                   <motion.div
-                    className="bg-gradient-to-r from-cyber-green to-cyber-blue h-2 rounded-lg"
+                    className="bg-gradient-to-r from-cyber-green to-cyber-blue h-2 rounded-lg layered z-content"
                     initial={{ width: 0 }}
                     whileInView={{ width: `${skill.level}%` }}
                     viewport={{ once: true }}
@@ -178,28 +178,28 @@ const Skills: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.3 }}
-          className="mt-16"
+          className="mt-16 layered z-content"
         >
-          <div className="text-center mb-8">
+          <div className="text-center mb-8 layered z-text">
             <h3 className="text-2xl font-bold mb-4 gradient-text">Platform Achievements</h3>
             <p className="text-primary-600 max-w-2xl mx-auto">
               Active engagement in cybersecurity learning platforms and hands-on challenges
             </p>
           </div>
-          <div className="flex justify-center gap-8 items-center">
-            <div className="bg-primary-100/5 backdrop-blur-sm rounded-xl p-4 border border-primary-300/20 hover:border-cyber-green/50 transition-all duration-300">
+          <div className="flex justify-center gap-8 items-center layered z-content">
+            <div className="bg-primary-100/5 backdrop-blur-sm rounded-xl p-4 border border-primary-300/20 hover:border-cyber-green/50 transition-all duration-300 layered z-content">
               <div className="flex items-center gap-8">
                 <div className="flex items-center justify-center">
-                  <h4 className="text-lg font-semibold text-primary-800 whitespace-nowrap">TryHackMe Progress</h4>
+                  <h4 className="text-lg font-semibold text-primary-800 whitespace-nowrap layered z-text">TryHackMe Progress</h4>
                 </div>
-                <div className="flex items-center justify-center">
+                <div className="flex items-center justify-center layered z-background-images">
                   <motion.iframe
                     whileHover={{ scale: 1.02 }}
                     src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=303130"
                     width="330"
                     height="90"
                     style={{ border: 'none', overflow: 'hidden', display: 'block' }}
-                    className="rounded-lg"
+                    className="rounded-lg layered z-background-images"
                     title="TryHackMe Badge"
                     scrolling="no"
                   />
@@ -212,9 +212,9 @@ const Skills: React.FC = () => {
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-cyber-green to-cyber-blue text-primary-50 text-sm font-semibold rounded-lg hover:shadow-lg transition-all duration-300"
+              className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-cyber-green to-cyber-blue text-primary-50 text-sm font-semibold rounded-lg hover:shadow-lg transition-all duration-300 layered z-content"
             >
-              Connect on TryHackMe
+              <span className="layered z-text">Connect on TryHackMe</span>
             </motion.a>
           </div>
         </motion.div>
@@ -224,11 +224,11 @@ const Skills: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.5 }}
-          className="text-center mt-16"
+          className="text-center mt-16 layered z-content"
         >
-          <div className="bg-primary-100/5 backdrop-blur-sm rounded-xl p-8 border border-primary-300/20">
-            <h3 className="text-2xl font-bold mb-4 gradient-text">Continuous Learning</h3>
-            <p className="text-primary-600 max-w-3xl mx-auto leading-relaxed">
+          <div className="bg-primary-100/5 backdrop-blur-sm rounded-xl p-8 border border-primary-300/20 layered z-content">
+            <h3 className="text-2xl font-bold mb-4 gradient-text layered z-text">Continuous Learning</h3>
+            <p className="text-primary-600 max-w-3xl mx-auto leading-relaxed layered z-text">
               The cybersecurity landscape evolves rapidly. I stay current with the latest threats,
               techniques, and technologies through continuous education, hands-on practice,
               and active participation in the security community.

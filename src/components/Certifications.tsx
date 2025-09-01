@@ -111,19 +111,19 @@ const Certifications: React.FC = () => {
   };
 
   return (
-    <section id="certifications" className="py-20 relative">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+  <section id="certifications" className="py-20 relative layered z-background defer-section">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 z-content">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-16 z-content"
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-            <span className="gradient-text">Certifications</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 z-text">
+            <span className="gradient-text z-text">Certifications</span>
           </h2>
-          <p className="text-lg text-primary-600 max-w-2xl mx-auto">
+          <p className="text-lg text-primary-600 max-w-2xl mx-auto z-text">
             Industry-recognized certifications validating expertise in cybersecurity, 
             ethical hacking, and security architecture.
           </p>
@@ -135,58 +135,58 @@ const Certifications: React.FC = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 z-content"
         >
           {certifications.map((cert) => (
             <motion.div
               key={cert.name}
               variants={itemVariants}
               whileHover={{ y: -5 }}
-              className={`bg-primary-100/5 backdrop-blur-sm rounded-xl p-6 border transition-all duration-300 card-hover ${getStatusColor(cert.status)}`}
+              className={`bg-primary-100/5 backdrop-blur-sm rounded-xl p-6 border transition-all duration-300 card-hover z-content ${getStatusColor(cert.status)}`}
             >
               {/* Certification Header */}
-              <div className="flex items-start justify-between mb-4">
-                <div className="flex-1">
-                  <div className="flex items-center mb-2">
+              <div className="flex items-start justify-between mb-4 z-content">
+                <div className="flex-1 z-content">
+                  <div className="flex items-center mb-2 z-content">
                     {getStatusIcon(cert.status)}
-                    <span className="ml-2 text-sm font-medium text-primary-600">
+                    <span className="ml-2 text-sm font-medium text-primary-600 z-text">
                       {getStatusText(cert.status)}
                     </span>
                   </div>
-                  <h3 className="text-lg font-bold text-primary-800 mb-1">{cert.name}</h3>
-                  <p className="text-sm text-primary-600 font-medium">{cert.issuer}</p>
+                  <h3 className="text-lg font-bold text-primary-800 mb-1 z-text">{cert.name}</h3>
+                  <p className="text-sm text-primary-600 font-medium z-text">{cert.issuer}</p>
                 </div>
-                <div className="p-2 bg-gradient-to-br from-cyber-green/20 to-cyber-blue/20 rounded-lg">
-                  <Award size={20} className="text-cyber-green" />
+                <div className="p-2 bg-gradient-to-br from-cyber-green/20 to-cyber-blue/20 rounded-lg z-content">
+                  <Award size={20} className="text-cyber-green z-text" />
                 </div>
               </div>
 
               {/* Certification Details */}
-              <div className="space-y-3 mb-4">
-                <div className="flex items-center text-sm text-primary-600">
-                  <Calendar size={16} className="mr-2" />
-                  <span>
+              <div className="space-y-3 mb-4 z-content">
+                <div className="flex items-center text-sm text-primary-600 z-text">
+                  <Calendar size={16} className="mr-2 z-text" />
+                  <span className="z-text">
                     {cert.status === 'earned' ? 'Earned: ' : cert.status === 'in-progress' ? 'Target: ' : 'Planned: '}
                     {cert.date}
                   </span>
                 </div>
 
                 {cert.credentialId && (
-                  <div className="text-sm">
-                    <span className="text-primary-600">ID: </span>
-                    <span className="text-primary-700 font-mono">{cert.credentialId}</span>
+                  <div className="text-sm z-text">
+                    <span className="text-primary-600 z-text">ID: </span>
+                    <span className="text-primary-700 font-mono z-text">{cert.credentialId}</span>
                   </div>
                 )}
 
                 {cert.validUntil && (
-                  <div className="text-sm text-primary-600">
-                    <span>Valid until: {cert.validUntil}</span>
+                  <div className="text-sm text-primary-600 z-text">
+                    <span className="z-text">Valid until: {cert.validUntil}</span>
                   </div>
                 )}
               </div>
 
               {/* Description */}
-              <p className="text-sm text-primary-600 mb-4 leading-relaxed">
+              <p className="text-sm text-primary-600 mb-4 leading-relaxed z-text">
                 {cert.description}
               </p>
 
@@ -198,10 +198,10 @@ const Certifications: React.FC = () => {
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="inline-flex items-center text-sm text-cyber-green hover:text-cyber-blue transition-colors font-medium"
+                  className="inline-flex items-center text-sm text-cyber-green hover:text-cyber-blue transition-colors font-medium z-content"
                 >
-                  <ExternalLink size={14} className="mr-1" />
-                  Verify Credential
+                  <ExternalLink size={14} className="mr-1 z-text" />
+                  <span className="z-text">Verify Credential</span>
                 </motion.a>
               )}
             </motion.div>
@@ -214,33 +214,33 @@ const Certifications: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.5 }}
-          className="text-center mt-16"
+          className="text-center mt-16 z-content"
         >
-          <div className="bg-primary-100/5 backdrop-blur-sm rounded-xl p-8 border border-primary-300/20">
-            <h3 className="text-2xl font-bold mb-4 gradient-text">Commitment to Excellence</h3>
-            <p className="text-primary-600 max-w-3xl mx-auto leading-relaxed">
+          <div className="bg-primary-100/5 backdrop-blur-sm rounded-xl p-8 border border-primary-300/20 z-content">
+            <h3 className="text-2xl font-bold mb-4 gradient-text z-text">Commitment to Excellence</h3>
+            <p className="text-primary-600 max-w-3xl mx-auto leading-relaxed z-text">
               These certifications represent my dedication to maintaining the highest standards 
               in cybersecurity. I continuously pursue advanced training and certifications to 
               stay current with emerging threats and security technologies.
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
-              <div className="text-center">
-                <div className="text-2xl font-bold text-cyber-green mb-2">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8 z-content">
+              <div className="text-center z-content">
+                <div className="text-2xl font-bold text-cyber-green mb-2 z-text">
                   {certifications.filter(c => c.status === 'earned').length}+
                 </div>
-                <div className="text-sm text-primary-600">Earned Certifications</div>
+                <div className="text-sm text-primary-600 z-text">Earned Certifications</div>
               </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-cyber-blue mb-2">
+              <div className="text-center z-content">
+                <div className="text-2xl font-bold text-cyber-blue mb-2 z-text">
                   {certifications.filter(c => c.status === 'in-progress').length}
                 </div>
-                <div className="text-sm text-primary-600">In Progress</div>
+                <div className="text-sm text-primary-600 z-text">In Progress</div>
               </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-primary-500 mb-2">
+              <div className="text-center z-content">
+                <div className="text-2xl font-bold text-primary-500 mb-2 z-text">
                   {certifications.filter(c => c.status === 'planned').length}
                 </div>
-                <div className="text-sm text-primary-600">Planned</div>
+                <div className="text-sm text-primary-600 z-text">Planned</div>
               </div>
             </div>
           </div>

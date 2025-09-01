@@ -1,12 +1,14 @@
-import { Header, Hero, Skills, Projects, Certifications, Contact, Footer } from './components';
+import { Header, Hero, Footer, Skills, Projects, Certifications, Contact } from './components';
 import { ThemeProvider } from './contexts/ThemeContext';
+
+// All sections imported eagerly (lazy loading removed)
 
 function App() {
   return (
     <ThemeProvider>
-      <div className="min-h-screen transition-colors duration-300" style={{ color: 'var(--text-primary)' }}>
+      <div className="min-h-screen transition-colors duration-300 layered z-background bg-dynamic" style={{ color: 'var(--text-primary)' }}>
         <Header />
-        <main>
+        <main className="layered z-content">
           <Hero />
           <Skills />
           <Projects />

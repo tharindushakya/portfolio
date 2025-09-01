@@ -27,26 +27,25 @@ const Header: React.FC = () => {
     <motion.header
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 layered z-text ${
         scrolled ? 'bg-primary-50/95 backdrop-blur-md shadow-lg' : 'bg-primary-50/80 backdrop-blur-sm'
       }`}
     >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 layered z-content">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="flex items-center space-x-2"
+            className="flex items-center space-x-2 layered z-text"
           >
-            <Shield className="h-8 w-8 text-cyber-green" />
-            <span className="text-xl font-bold gradient-text">TharinduShakya</span>
+            <Shield className="h-8 w-8 text-cyber-green layered z-text" />
+            <span className="text-xl font-bold gradient-text layered z-text">TharinduShakya</span>
           </motion.div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            <nav className="flex space-x-8">
-              {navItems.map((item) => (
+          <div className="hidden md:flex items-center space-x-8 layered z-text">
+            <nav className="flex space-x-8 layered z-text">{navItems.map((item) => (
                 <motion.a
                   key={item.href}
                   href={item.href}

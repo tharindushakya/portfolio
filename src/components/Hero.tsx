@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useBackgroundScrollEffect } from '../hooks/useBackgroundScrollEffect';
 import { motion } from 'framer-motion';
 import { Github, Linkedin, Twitter, ChevronDown } from 'lucide-react';
 import HackerOneIcon from './icons/HackerOneIcon';
@@ -79,6 +80,8 @@ const LaserTyping: React.FC<{ text: string; delay?: number }> = ({ text, delay =
 };
 
 const Hero: React.FC = () => {
+  // Activate background blur/zoom effect once component mounts
+  useBackgroundScrollEffect({ maxBlur: 14, maxScale: 1.08, start: 0.15, end: 0.65 });
   const socialLinks = [
     { icon: Github, href: 'https://github.com/tharindushakya', label: 'GitHub' },
     { icon: Linkedin, href: 'https://www.linkedin.com/in/tharindu-shakya-93775318b/', label: 'LinkedIn' },
@@ -88,33 +91,34 @@ const Hero: React.FC = () => {
   ];
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden layered z-background">
       {/* Animated background elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-cyber-green/10 rounded-full blur-3xl animate-pulse-slow"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-cyber-blue/10 rounded-full blur-3xl animate-pulse-slow delay-1000"></div>
+      <div className="absolute inset-0 overflow-hidden z-patterns">
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-cyber-green/10 rounded-full blur-3xl animate-pulse-slow z-patterns"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-cyber-blue/10 rounded-full blur-3xl animate-pulse-slow delay-1000 z-patterns"></div>
       </div>
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-content">
+        <div className="text-center z-content">
           {/* Main content */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
+            className="z-content"
           >
             <motion.h1
-              className="text-4xl sm:text-6xl lg:text-7xl font-bold mb-6"
+              className="text-4xl sm:text-6xl lg:text-7xl font-bold mb-6 z-text"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2, duration: 0.8 }}
             >
-              <span className="text-primary-900">Hi, I'm </span>
+              <span className="text-primary-900 z-text">Hi, I'm </span>
               <LaserTyping text="Tharindu Shakya" delay={800} />
             </motion.h1>
 
             <motion.p
-              className="text-xl sm:text-2xl lg:text-3xl text-primary-600 mb-4 font-medium"
+              className="text-xl sm:text-2xl lg:text-3xl text-primary-600 mb-4 font-medium z-text"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4, duration: 0.8 }}
@@ -123,7 +127,7 @@ const Hero: React.FC = () => {
             </motion.p>
 
             <motion.p
-              className="text-lg sm:text-xl text-primary-500 mb-8 max-w-3xl mx-auto leading-relaxed"
+              className="text-lg sm:text-xl text-primary-500 mb-8 max-w-3xl mx-auto leading-relaxed z-text"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6, duration: 0.8 }}
@@ -134,7 +138,7 @@ const Hero: React.FC = () => {
 
             {/* Social Links */}
             <motion.div
-              className="flex items-center justify-center space-x-6 mb-12"
+              className="flex items-center justify-center space-x-6 mb-12 z-content"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8, duration: 0.8 }}
@@ -147,17 +151,17 @@ const Hero: React.FC = () => {
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.95 }}
-                  className="inline-flex items-center justify-center w-14 h-14 rounded-full leading-none transition-all duration-300 hover:shadow-[0_0_12px_rgba(0,255,65,0.5)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyber-green/60"
+                  className="inline-flex items-center justify-center w-14 h-14 rounded-full leading-none transition-all duration-300 hover:shadow-[0_0_12px_rgba(0,255,65,0.5)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyber-green/60 z-content"
                   title={social.label}
                 >
-                  <social.icon className="w-5 h-5 text-primary-600 hover:text-cyber-green transition-colors" />
+                  <social.icon className="w-5 h-5 text-primary-600 hover:text-cyber-green transition-colors z-text" />
                 </motion.a>
               ))}
             </motion.div>
 
             {/* CTA Buttons */}
             <motion.div
-              className="flex flex-col sm:flex-row gap-4 justify-center mb-32"
+              className="flex flex-col sm:flex-row gap-4 justify-center mb-32 z-content"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1, duration: 0.8 }}
@@ -166,7 +170,7 @@ const Hero: React.FC = () => {
                 href="#projects"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-3 bg-gradient-to-r from-cyber-green to-cyber-blue text-primary-50 font-semibold rounded-lg hover:shadow-lg transition-all duration-300"
+                className="px-8 py-3 bg-gradient-to-r from-cyber-green to-cyber-blue text-primary-50 font-semibold rounded-lg hover:shadow-lg transition-all duration-300 z-content"
               >
                 View My Work
               </motion.a>
@@ -174,7 +178,7 @@ const Hero: React.FC = () => {
                 href="#contact"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-3 border-2 border-cyber-green text-cyber-green hover:bg-cyber-green hover:text-primary-50 font-semibold rounded-lg transition-all duration-300"
+                className="px-8 py-3 border-2 border-cyber-green text-cyber-green hover:bg-cyber-green hover:text-primary-50 font-semibold rounded-lg transition-all duration-300 z-content"
               >
                 Get In Touch
               </motion.a>
@@ -185,7 +189,7 @@ const Hero: React.FC = () => {
 
       {/* Scroll indicator - positioned relative to screen */}
       <motion.div
-        className="absolute bottom-8 right-8 transform z-20"
+        className="absolute bottom-8 right-8 transform z-text"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5, duration: 0.8 }}
@@ -194,9 +198,9 @@ const Hero: React.FC = () => {
           href="#skills"
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
-          className="cursor-pointer block"
+          className="cursor-pointer block z-text"
         >
-          <ChevronDown size={32} className="text-primary-500 hover:text-cyber-green transition-colors" />
+          <ChevronDown size={32} className="text-primary-500 hover:text-cyber-green transition-colors z-text" />
         </motion.a>
       </motion.div>
     </section>
