@@ -121,61 +121,12 @@ const Certifications: React.FC = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
-            <span className="gradient-text">Certifications & Live Progress</span>
+            <span className="gradient-text">Certifications</span>
           </h2>
           <p className="text-lg text-primary-600 max-w-2xl mx-auto">
-            Industry-recognized certifications and real-time hands-on lab progress reflecting continuous learning in
-            cybersecurity, ethical hacking, and security architecture.
+            Industry-recognized certifications validating expertise in cybersecurity, 
+            ethical hacking, and security architecture.
           </p>
-        </motion.div>
-
-        {/* TryHackMe Live Badge */}
-        <motion.div
-          initial={{ opacity: 0, y: 25 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mb-16"
-        >
-          <div className="bg-primary-100/5 backdrop-blur-sm rounded-xl p-6 border border-primary-300/20 flex flex-col md:flex-row items-center gap-6 md:gap-10 relative overflow-hidden">
-            <div className="absolute inset-0 pointer-events-none opacity-40">
-              <div className="absolute -top-16 -left-10 w-56 h-56 bg-cyber-green/10 rounded-full blur-3xl" />
-              <div className="absolute -bottom-20 -right-10 w-72 h-72 bg-cyber-blue/10 rounded-full blur-3xl" />
-            </div>
-            <div className="relative z-10 w-full md:w-auto flex justify-center">
-              <div className="rounded-lg border border-primary-300/30 shadow-inner shadow-black/30 bg-primary-200/5 p-2">
-                <iframe
-                  title="TryHackMe Progress Badge"
-                  src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=303130"
-                  loading="lazy"
-                  className="w-[300px] h-[180px] md:w-[340px] md:h-[200px] rounded-md border-0"
-                  referrerPolicy="no-referrer"
-                />
-              </div>
-            </div>
-            <div className="relative z-10 flex-1 text-center md:text-left">
-              <h3 className="text-2xl font-bold mb-3 text-primary-800">Hands-On Lab Progress</h3>
-              <p className="text-primary-600 text-sm leading-relaxed mb-4 max-w-xl mx-auto md:mx-0">
-                Live training streak and room completion stats update automatically from the TryHackMe platform. This badge
-                showcases practical engagement with offensive, defensive, and blue team labs beyond theoretical study.
-              </p>
-              <div className="flex flex-wrap justify-center md:justify-start gap-3">
-                <span className="px-3 py-1 text-xs font-medium rounded-full bg-cyber-green/15 text-cyber-green border border-cyber-green/30 tracking-wide">
-                  Real-Time
-                </span>
-                <span className="px-3 py-1 text-xs font-medium rounded-full bg-cyber-blue/15 text-cyber-blue border border-cyber-blue/30 tracking-wide">
-                  Continuous Learning
-                </span>
-                <a
-                  href="https://tryhackme.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-3 py-1 text-xs font-medium rounded-full bg-primary-200/10 text-primary-600 border border-primary-300/30 hover:border-cyber-green/50 hover:text-cyber-green transition-colors"
-                >
-                  View Platform
-                </a>
-              </div>
-            </div>
-          </div>
         </motion.div>
 
         {/* Certifications Grid */}
@@ -255,6 +206,36 @@ const Certifications: React.FC = () => {
               )}
             </motion.div>
           ))}
+        </motion.div>
+
+        {/* Platform Achievements */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.3 }}
+          className="mt-16"
+        >
+          <div className="text-center mb-8">
+            <h3 className="text-2xl font-bold mb-4 gradient-text">Platform Achievements</h3>
+            <p className="text-primary-600 max-w-2xl mx-auto">
+              Active engagement in cybersecurity learning platforms and hands-on challenges
+            </p>
+          </div>
+          <div className="flex justify-center">
+            <div className="bg-primary-100/5 backdrop-blur-sm rounded-xl p-3 border border-primary-300/20 hover:border-cyber-green/50 transition-all duration-300">
+              <div className="text-center mb-4">
+                <h4 className="text-lg font-semibold text-primary-800 mb-2">TryHackMe Progress</h4>
+                <p className="text-sm text-primary-600">Hands-on cybersecurity learning platform</p>
+              </div>              
+              <motion.iframe
+                  src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=303130"
+                  style={{ border: 'none', overflow: 'hidden'}}
+                  title="TryHackMe Badge"
+                  width="100%"
+              />
+            </div>
+          </div>
         </motion.div>
 
         {/* Additional Info */}
