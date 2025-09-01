@@ -63,8 +63,8 @@ const Projects: React.FC = () => {
       description: "Created a custom penetration testing toolkit that automates reconnaissance, vulnerability assessment, and reporting phases. Integrated multiple security tools into a unified workflow.",
       tags: ["Penetration Testing", "Automation", "Security Tools"],
       impact: "40% faster pen-test delivery, adopted by security team",
-      date: "2023",
-      githubUrl: "#"
+      date: "2025",
+      githubUrl: "https://github.com/tharindushakya/network-security-assessment-framework.git"
     },
     {
       title: "Mobile App Security Analysis",
