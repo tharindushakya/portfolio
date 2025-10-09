@@ -6,7 +6,7 @@ import ReactGA from "react-ga4";
 function App() {
   useEffect(() => {
     // Initialize Google Analytics
-    ReactGA.initialize("G-XXXXXXXXXX"); // Replace with your real Measurement ID
+    ReactGA.initialize("G-X01QEJ7RJC");
 
     // Send initial pageview when the app loads
     ReactGA.send({ hitType: "pageview", page: window.location.pathname + window.location.search });
